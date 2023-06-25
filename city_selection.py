@@ -5,9 +5,11 @@ longitude = 0
 city_name = ""
 
 def get_coordinates(city_name):
+    
     global latitude, longitude
     api_url = 'https://api.api-ninjas.com/v1/city?name={}'.format(city_name)
     response = requests.get(api_url, headers={'X-Api-Key': 'CDsYwIecXfRCxv0m4/RPJA==DIvZZ2xJbskxagOs'})
+
     if response.status_code == requests.codes.ok:
         result = response.json()
         latitude = result[0]["latitude"]
@@ -16,8 +18,8 @@ def get_coordinates(city_name):
         print("Error:", response.status_code, response.text)
 
 """
-  function that takes in one parameter: the name of any city
-  uses api-ninjas' data to obtain longitude and latitudes of the user's selected city, then passes the result to the longitude and latitude variables created at the top
+  function that takes in one parameter: the name of any city.
+  uses api-ninjas' data to obtain longitude and latitudes of the user's selected city, then passes the result to the longitude and latitude variables created at the top.
 """
 
 
@@ -46,8 +48,8 @@ def get_weather(long, lat):
     print(f"the weather outside would be described as {description}!")
 
     # FIXME: this doesn't make sense when it prints out, it would read as "~~ described as clear sky"
-    
+
 """
-  function that takes in two parameters: longitude and latitude of any city
-  uses openweather's api to obtain weather information on the given city and prints the information
+  function that takes in two parameters: longitude and latitude of any city.
+  uses openweather's api to obtain weather information on the given city and prints the information.
 """
