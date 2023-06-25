@@ -42,12 +42,7 @@ def get_weather(long, lat):
 
     print(f"In {city_name} the current temperature is {temp} degrees Fahrenheit but it feels like {feels_like}F,")
     print(f"the humidity is {humidity}g.m-3, with the max temperature being {temp_max}F and the low for the day being {temp_min}F,")
-
-    # FIXME: how do we write the unit for humidity? its supposed to be g.m-3, which is units of grams of water vapour per cubic metre of air.
-
     print(f"the weather outside would be described as {description}!")
-
-    # FIXME: this doesn't make sense when it prints out, it would read as "~~ described as clear sky"
 
 """
   function that takes in two parameters: longitude and latitude of any city.
