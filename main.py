@@ -1,14 +1,15 @@
-import city_selection
+import city_selection as c
 
 repeat = "?"
 
 while repeat != "no":
-    print("Enter a city name from this list to check its current weather: ")
-    for keys in city_selection.city_dict:
-        print(keys)
+    print("Enter a city name to check its current weather! ")
     user_city = input(" >")
-    if user_city in city_selection.city_dict:
-        lat = city_selection.city_dict[user_city][0]
-        long = city_selection.city_dict[user_city][1]
-    city_selection.get_weather(long, lat)
-    repeat = input("Would you like to check the weather for a different city? \nPlease enter yes/no: ")
+    c.city_name = user_city
+    c.get_coordinates(user_city)
+    c.get_weather(c.longitude, c.latitude)
+    repeat = input("\n \nWould you like to check the weather for a different city? \nPlease enter yes/no: ")
+    while repeat != "yes" and repeat != "no":
+        repeat = input("Please enter yes or no: ")
+    if repeat == "no":
+        print("\nThank you for using this program! ")
